@@ -1,4 +1,4 @@
-import Create from "./create";
-import Header from "./header";
+import Create from './create';
+import Header from './header';
 
-export {Create, Header}
+export { Create, Header };

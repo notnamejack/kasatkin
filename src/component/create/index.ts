@@ -1,1 +1,1 @@
-export {Create as default} from './create'
+export { Create as default } from './create';

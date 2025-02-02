@@ -1,5 +1,3 @@
-import Main from "./main";
+import Main from './main';
 
-export{
-	Main
-}
+export { Main };

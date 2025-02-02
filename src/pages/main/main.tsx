@@ -1,11 +1,10 @@
-import { Create, Header } from "../../component";
+import { Create, Header } from '../../component';
 
-
-export function Main(){
-	return(
-		<>
-			<Header/>
-			<Create/>
-		</>
-	)
+export function Main() {
+	return (
+		<main>
+			<Header />
+			<Create />
+		</main>
+	);
 }
