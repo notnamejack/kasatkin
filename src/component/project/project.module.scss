@@ -1,0 +1,85 @@
+.project{
+	height: 110vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	// скрол 3000px
+	.container_list{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+		overflow-y: auto;
+		scrollbar-width: none;
+
+		.list_project{
+			position: sticky;
+			width: 1200px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			.rigth,
+			.left{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 560px;
+				.image{
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					border-radius: 20px;
+				}
+			}
+			.rigth{
+				.carmax{
+					margin-bottom: 445px;
+					width: 560px;
+					height: 360px;
+				}
+				.turn{
+					margin-bottom: 170px;
+					width: 440px;
+					height: 440px;
+				}
+				.bank{
+					margin-bottom: 330px;
+					width: 406px;
+					height: 485px;
+				}
+				.trend{
+					width: 560px;
+					height: 360px;
+				}
+			}
+			.left{
+				.end{
+					margin-top: 407px;
+					width: 560px;
+					height: 360px;
+				}
+				.m_carmax{
+					margin-top: 238px;
+					width: 440px;
+					height: 440px;
+				}
+				.gen{
+					margin-top: 370px;
+					width: 560px;
+					height: 360px;
+				}
+				.video{
+					margin-top: 450px;
+					width: 440px;
+					height: 440px;
+				}
+			}
+		}
+	}
+}
