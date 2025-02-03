@@ -1,4 +1,4 @@
-import { Create, Header, Project } from '../../component';
+import { Create, Header, Order, Project } from '../../component';
 
 export function Main() {
 	return (
@@ -6,6 +6,7 @@ export function Main() {
 			<Header />
 			<Create />
 			<Project />
+			<Order />
 		</main>
 	);
 }

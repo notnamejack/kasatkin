@@ -4,7 +4,6 @@
 	position: relative;
 	overflow: visible;
 	transition: height 0.3s;
-	// скрол 3000px
 	.after {
 		height: 3000px;
 		overflow: hidden;
@@ -89,6 +88,7 @@
 				}
 				.video {
 					margin-top: 450px;
+					margin-bottom: 30px;
 					width: 440px;
 					height: 440px;
 				}
