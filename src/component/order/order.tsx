@@ -3,6 +3,9 @@ import s from './order.module.scss';
 import { useCallback } from 'react';
 import { useForm } from '../../hook/useForm';
 import { ReactComponent as Telega } from './assets/telega.svg';
+import { ReactComponent as TelegaBlack } from './assets/telega-black.svg';
+import { ReactComponent as Watsapp } from './assets/watsapp.svg';
+import { ReactComponent as Logo } from './assets/logo.svg';
 
 interface IForm{
 	name: string | undefined,
@@ -77,6 +80,23 @@ export function Order () {
 							</a>
 						</div>
 					</form>
+				</div>
+			</div>
+			<div className={s.footer}>
+				<h2>Начните реализацию своего проекта прямо сейчас</h2>
+				<div className={s.footer_link}>
+					<div className={s.message}>
+						<a href=''><TelegaBlack /></a>
+						<a href=''><Watsapp /></a>
+					</div>
+					<div className={s.logo}>
+						<Logo/>
+					</div>
+					<div className={s.police}>
+						<a>Политика конфиденцальности</a>
+						<p>Все права защищены</p>
+						<a>info@kasatkin.io</a>
+					</div>
 				</div>
 			</div>
 		</section>
