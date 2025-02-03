@@ -1,80 +1,93 @@
-.project{
-	height: 110vh;
+.project {
+	height: min-content;
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: relative;
+	overflow: visible;
+	transition: height 0.3s;
 	// скрол 3000px
-	.container_list{
-		position: absolute;
+	.after {
+		height: 3000px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.container_list {
+		position: sticky;
 		top: 0;
 		left: 0;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: 100%;
-		overflow-y: auto;
-		scrollbar-width: none;
-
-		.list_project{
-			position: sticky;
+		height: 110vh;
+		.deactop_logo {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			height: 110vh;
+			z-index: 0;
+		}
+		.list_project {
+			position: relative;
+			height: 110vh;
 			width: 1200px;
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-start;
+			overflow-y: hidden;
+			scrollbar-width: none;
+			z-index: 1;
 			.rigth,
-			.left{
+			.left {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				width: 560px;
-				.image{
+				.image {
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: cover;
 					border-radius: 20px;
 				}
 			}
-			.rigth{
-				.carmax{
+			.rigth {
+				.carmax {
 					margin-bottom: 445px;
 					width: 560px;
 					height: 360px;
 				}
-				.turn{
+				.turn {
 					margin-bottom: 170px;
 					width: 440px;
 					height: 440px;
 				}
-				.bank{
+				.bank {
 					margin-bottom: 330px;
 					width: 406px;
 					height: 485px;
 				}
-				.trend{
+				.trend {
 					width: 560px;
 					height: 360px;
 				}
 			}
-			.left{
-				.end{
+			.left {
+				.end {
 					margin-top: 407px;
 					width: 560px;
 					height: 360px;
 				}
-				.m_carmax{
+				.m_carmax {
 					margin-top: 238px;
 					width: 440px;
 					height: 440px;
 				}
-				.gen{
+				.gen {
 					margin-top: 370px;
 					width: 560px;
 					height: 360px;
 				}
-				.video{
+				.video {
 					margin-top: 450px;
 					width: 440px;
 					height: 440px;
