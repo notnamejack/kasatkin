@@ -71,6 +71,14 @@ export function Project() {
 				</div>
 			</div>
 			<div className={s.after}></div>
+			<div className={s.container_mobile}>
+				<h2></h2>
+				<div className={s.image_modile}>
+					<div
+						className={clsx(s.carmax, s.image)}
+						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+				</div>
+			</div>
 		</section>
 	);
 }

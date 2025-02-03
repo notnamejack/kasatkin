@@ -95,4 +95,19 @@
 			}
 		}
 	}
+	.container_mobile{
+		display: none;
+	}
+}
+
+
+@media (max-width: 1024px) {
+	.project{
+		.container_list{
+			display: none;
+		}
+		.after{
+			display: none;
+		}
+}
 }
