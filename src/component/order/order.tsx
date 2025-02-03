@@ -7,6 +7,7 @@ import { ReactComponent as TelegaBlack } from './assets/telega-black.svg';
 import { ReactComponent as Watsapp } from './assets/watsapp.svg';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import { ReactComponent as LogoTab } from './assets/logo-tab.svg';
+import { ReactComponent as LogoMobile } from './assets/logo-mobile.svg';
 
 interface IForm{
 	name: string | undefined,
@@ -93,6 +94,7 @@ export function Order () {
 					<div className={s.logo}>
 						<Logo className={s.desctop}/>
 						<LogoTab className={s.tab}/>
+						<LogoMobile className={s.mobile}/>
 					</div>
 					<div className={s.police}>
 						<a>Политика конфиденцальности</a>

@@ -143,6 +143,9 @@
 			padding: 0 24px;
 			h1{
 				font-size: 54px;
+				strong{
+					font-size: 54px;
+				}
 			}
 		}
 		padding-top: 12.2vh;
@@ -161,5 +164,51 @@
 			}
 
 		}
+	}
 }
+
+@media (max-width: 500px) {
+	.create{
+		padding-top: 8.8vh;
+		gap: 30px;
+		.container_title{
+			padding: 0 16px;
+			width: calc(100% - 32px);
+			h1{
+				font-size: 32px;
+				strong{
+					font-size: 32px;
+				}
+			}
+		}
+		.goal{
+			padding-top: 10px;
+			gap: 30px;
+			h2{
+				padding: 0 16px;
+				width: calc(100% - 32px);
+				font-size: 32px;
+			}
+			.goal_container{
+				width: 100%;
+				.animi{
+					width: 100%;
+					&::after{
+						width: 100%;
+						border: none;
+					}
+				}
+				.result{
+					gap: 50px;
+					.result_items{
+						flex-direction: column;
+						gap: 50px;
+						.result_item{
+							border: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
 }
