@@ -131,7 +131,8 @@
 		gap: 20px;
 		width: 100%;
 		h2{
-			padding: 80px 120px;
+			padding: 80px 0;
+			margin: 0 auto;
 			width: 1200px;
 			color: #000;
 			font-family: BOWLER;
@@ -159,6 +160,9 @@
 				}
 			}
 			.logo{
+				.tab{
+					display: none;
+				}
 				padding-bottom: 10px;
 			}
 			.police{
@@ -187,5 +191,41 @@
 			}
 		}
 
+	}
+}
+
+@media (max-width: 1024px) {
+	.order{
+		.footer{
+			h2{
+				padding: 80px 0;
+				margin: 0 auto;
+				width: 698px;
+				font-size: 32px;
+			}
+			.footer_link{
+				width: 698px;
+				.logo{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					width: 698px;
+					height: 138px;
+					.desctop{
+						display: none;
+					}
+					.tab{
+						display: block;
+					}
+				}
+				.police{
+					width: 698px;
+					a,p{
+						width: 30%;
+					}
+				}
+			}
+		}
 	}
 }
