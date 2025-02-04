@@ -1,5 +1,5 @@
 .create {
-	padding-top: 24.4vh;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -7,8 +7,19 @@
 	width: 100%;
 	margin-bottom: 215px;
 	.container_title {
-		max-width: 1205px;
+		position: relative;
+		padding-top: 24.4vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		// изменять
+		transform: translateY(0);
+		transition: height .2s, transform .2s;
+		z-index: 10;
+		background-color: #f7f6f6;
 		h1 {
+			max-width: 1205px;
 			color: #000;
 			font-family: BOWLER;
 			font-size: 68px;
@@ -31,11 +42,11 @@
 		align-items: center;
 		justify-content: flex-start;
 		overflow: hidden;
-		height: 550px;
-		// padding-bottom: 520px;
+		height: 75vh;
 		width: 100%;
 		background-color: #000;
-		// transform: translateY(-100px);
+		// изменять
+		transform: translateY(-100px);
 		transition: height .2s, transform .2s;
 		.video{
 			position: sticky;
@@ -47,10 +58,17 @@
 	.goal {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		gap: 50px;
-		max-width: 1200px;
+		padding-top: 60px;
+		background-color: #f7f6f6;
+		width: 100%;
+		// изменять
+		transform: translateY(-30vh);
+		z-index: 10;
+		transition: height .2s, transform .2s;
 		h2 {
+			max-width: 1200px;
 			color: #000;
 			font-family: BOWLER;
 			font-size: 78px;
@@ -72,6 +90,7 @@
 			display: flex;
 			align-items: center;
 			gap: 85px;
+			max-width: 1205px;
 			.animi {
 				display: flex;
 				align-items: center;

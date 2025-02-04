@@ -9,44 +9,7 @@ export function Create() {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const [scroll, setScroll] = useState<number>(0);
 
-	// useEffect(() => {
-	// 	// При необходимости можно найти canvas внутри контейнера и применить transform.
-	// 	// Здесь предполагается, что DotLottieReact рендерит <canvas>.
-	// 	if (containerRef.current) {
-	// 		const canvas = containerRef.current.querySelector('canvas');
-	// 		if (canvas) {
-	// 			// Применим трансформацию для изменения соотношения (например, растянем по высоте на 20%)
-	// 			canvas.style.transform = 'scale(1, 1.5)';
-	// 			// Устанавливаем origin, чтобы трансформация происходила от верхнего левого угла
-	// 			canvas.style.transformOrigin = 'top left';
-	// 		}
-	// 	}
-	// }, []);
-
-
 	useEffect(() => {
-		console.log(scroll);
-		if (scroll < startScroll && containerRef.current){
-			const object = containerRef.current;
-			object.style.height = `${550}px`
-			object.style.transform = `translate(0, -${0}px)`
-		}
-		else if (scroll >= startScroll && scroll <= 300 && containerRef.current){
-			const object = containerRef.current;
-			object.style.height = `${550 + ((scroll - startScroll) * 1.5)}px`
-			object.style.transform = `translate(0, -${(scroll - startScroll) * 1.5}px)`
-		}
-		else if (scroll >= 300 && scroll <= 500 && containerRef.current){
-			const object = containerRef.current;
-			object.style.height = `${750 - ((scroll - endScroll) * 1.5)}px`
-			object.style.transform = `translate(0, -${(190 - ((scroll - endScroll) * 1.5))}px)`
-		}
-		else if (scroll > 500 && containerRef.current){
-			const object = containerRef.current;
-			object.style.height = `${550}px`
-			object.style.transform = `translate(0, -${0}px)`
-		}
-		// else containerRef.current?.scrollTo(0, 0);
 	}, [scroll]);
 
 	useEffect(() => {
@@ -68,15 +31,6 @@ export function Create() {
 				</h1>
 			</div>
 			<div className={s.container_video} ref={containerRef}>
-				{/* <DotLottieReact
-					src={'./video/video.json'}
-					loop
-					autoplay
-					style={{
-						width: '100%',
-						height: '100%',
-					}}
-				/> */}
 				<div className={s.video}>
 					<video autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
 						<source src='./video/gem.mp4' type='video/mp4'/>
