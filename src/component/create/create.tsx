@@ -27,7 +27,7 @@ export function Create() {
 				</h1>
 			</div>
 			<div className={s.container_video} ref={containerRef}>
-				<DotLottieReact
+				{/* <DotLottieReact
 					src={'./video/video.json'}
 					loop
 					autoplay
@@ -35,7 +35,10 @@ export function Create() {
 						width: '100%',
 						height: '100%',
 					}}
-				/>
+				/> */}
+				<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
+					<source src='./video/gem.mp4' type='video/mp4'/>
+				</video>
 			</div>
 			<div className={s.goal}>
 				<h2>
@@ -43,7 +46,10 @@ export function Create() {
 				</h2>
 				<div className={s.goal_container}>
 					<div className={s.animi}>
-						<DotLottieReact src={'./video/start.json'} loop autoplay />
+
+						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
+							<source src='./video/gem.mp4' type='video/mp4'/>
+						</video>
 					</div>
 					<div className={s.result}>
 						<ul className={s.result_items}>
