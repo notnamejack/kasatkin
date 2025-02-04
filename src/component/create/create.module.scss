@@ -26,12 +26,23 @@
 		}
 	}
 	.container_video {
+		position: relative;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		overflow: hidden;
-		height: 750px;
+		height: 550px;
+		// padding-bottom: 520px;
 		width: 100%;
+		background-color: #000;
+		// transform: translateY(-100px);
+		transition: height .2s, transform .2s;
+		.video{
+			position: sticky;
+			height: min-content;
+			top: 0;
+			left: 0;
+		}
 	}
 	.goal {
 		display: flex;
