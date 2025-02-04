@@ -139,6 +139,9 @@
 
 @media (max-width: 1024px) {
 	.create{
+		margin-bottom: 145px;
+		padding-top: 12.2vh;
+		gap: 40px;
 		.container_title{
 			padding: 0 24px;
 			h1{
@@ -148,8 +151,6 @@
 				}
 			}
 		}
-		padding-top: 12.2vh;
-		gap: 40px;
 		.goal{
 			padding-top: 40px;
 			gap: 42px;
@@ -169,6 +170,7 @@
 
 @media (max-width: 500px) {
 	.create{
+		margin-bottom: 80px;
 		padding-top: 8.8vh;
 		gap: 30px;
 		.container_title{

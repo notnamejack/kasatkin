@@ -72,11 +72,36 @@ export function Project() {
 			</div>
 			<div className={s.after}></div>
 			<div className={s.container_mobile}>
-				<h2></h2>
+				<h2>Портфолио</h2>
 				<div className={s.image_modile}>
-					<div
-						className={clsx(s.carmax, s.image)}
+					<div className={clsx(s.carmax, s.image)}
 						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<h3>Carmax</h3>
+				</div>
+				<div className={s.image_modile}>
+					<div className={clsx(s.carmax, s.image)}
+						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<h3>xpad pro</h3>
+				</div>
+				<div className={s.image_modile}>
+					<div className={clsx(s.carmax, s.image)}
+						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<h3>kf OLD VERSION</h3>
+				</div>
+				<div className={s.image_modile}>
+					<div className={clsx(s.carmax, s.image)}
+						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<h3>VAKKO WALLET</h3>
+				</div>
+				<div className={s.image_modile}>
+					<div className={clsx(s.carmax, s.image)}
+						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<h3>aLPHA DEX</h3>
+				</div>
+				<div className={s.image_modile}>
+					<div className={clsx(s.carmax, s.image)}
+						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<h3>ARK PRODUCTION</h3>
 				</div>
 			</div>
 		</section>
