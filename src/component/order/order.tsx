@@ -58,15 +58,9 @@ export function Order () {
 			<div className={s.sticky} ref={refProject}>
 				<div className={s.order_container}>
 					<div className={s.form_background}>
-						<DotLottieReact
-							src={'./video/order.json'}
-							loop
-							autoplay
-							style={{
-								width: '100%',
-								height: '100%',
-							}}
-						/>
+						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%'}}>
+							<source src='./video/order.mp4' type='video/mp4'/>
+						</video>
 					</div>
 					<div className={s.order_form}>
 						<form onSubmit={formSubmit} className={s.group}>
