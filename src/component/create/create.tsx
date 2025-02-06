@@ -20,7 +20,7 @@ export function Create() {
       ([entry]) => {
         setThirdVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.6 }
     );
     if (thirdBlockRef.current) {
       observer.observe(thirdBlockRef.current);
@@ -33,42 +33,42 @@ export function Create() {
   }, []);
   // Стили для первого блока: смещение вверх и исчезание
   const blockOneStyle: React.CSSProperties = {
-    transform: `translateY(-${scrollY * 0.7}px)`,
-    opacity: Math.max(1 - scrollY / 200, 0),
-    height: '500px',
+    transform: `translateY(-${scrollY * 2}px)`,
+    opacity: Math.max(1 - scrollY / 100, 0),
+    height: '50vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '2rem',
     position: 'relative',
     zIndex: 1,
+    transition: 'opacity 0.3s, transform 0.3s',
   };
   // Определяем высоту второго блока:
   let blockTwoHeight: number;
   if (thirdVisible) {
-    blockTwoHeight = 500;
+    blockTwoHeight = 40;
   } else {
     // Увеличение высоты пропорционально прокрутке
-    blockTwoHeight = 500 + scrollY * 0.5;
+    blockTwoHeight = 40 + scrollY * 0.1 * 1.9;
   }
   // Стили для второго блока: увеличение высоты и смещение вверх для эффекта "наезда"
   const blockTwoStyle: React.CSSProperties = {
-    height: `${blockTwoHeight}px`,
+    height: `${blockTwoHeight}vh`,
     backgroundColor: 'transparent',
-    transition: 'height 0.3s ease-out, transform .3s ease-out',
+    transform: `translateY(${!thirdVisible ?`-${scrollY * 1.5}` : -80}px)`,
+    transition: 'height 0.3s linear, transform .3s linear 0.01s',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '2rem',
     position: 'absolute',
-	top: `-60px`,
+	top: `-6vh`,
     zIndex: 0,
     // Смещение вверх, чтобы второй блок "наезжал" на первый
-    transform: `translateY(${!thirdVisible ?`-${scrollY * 0.7}` : -60}px)`,
   };
   // Стили для третьего блока
   const blockThreeStyle: React.CSSProperties = {
-    height: '500px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -84,7 +84,7 @@ export function Create() {
 					</h1>
 				</div>
 			</div>
-			<div style={{position: 'relative', height: 500, width: `100%`}}>
+			<div style={{position: 'relative', height: `40vh`, width: `100%`}}>
 				<div style={blockTwoStyle}>
 					<div className={s.container_video}>
 						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
