@@ -16,6 +16,13 @@ export function Project() {
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);
 
+	const bankRef = useRef<HTMLDivElement>(null);
+	const carmaxRef = useRef<HTMLDivElement>(null);
+	const endRef = useRef<HTMLDivElement>(null);
+	const gemRef = useRef<HTMLDivElement>(null);
+	const trendRef = useRef<HTMLDivElement>(null);
+	const turnRef = useRef<HTMLDivElement>(null);
+
 	useEffect(() => {
 		if (scroll >= startScroll)
 			refProject.current?.scrollTo(0, (scroll - startScroll) * 0.7);
@@ -44,26 +51,45 @@ export function Project() {
 						<div
 							className={clsx(s.carmax, s.image)}
 							style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+						<div className={clsx(s.turn, s.image)} ref={turnRef}>
+							<video className={""} autoPlay loop muted playsInline
+								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(turnRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px) translatex(50px)`}}>
+								<source src='./video/turn.mp4' type='video/mp4'/>
+							</video>
+						</div>
+						<div className={clsx(s.bank, s.image)} ref={bankRef}>
+							<video className={""} autoPlay loop muted playsInline
+								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(bankRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+								<source src='./video/bank.mp4' type='video/mp4'/>
+							</video>
+						</div>
 						<div
-							className={clsx(s.turn, s.image)}
-							style={{ backgroundImage: `url(${turnImg})` }}></div>
-						<div
-							className={clsx(s.bank, s.image)}
-							style={{ backgroundImage: `url(${bankImg})` }}></div>
-						<div
-							className={clsx(s.trend, s.image)}
-							style={{ backgroundImage: `url(${trendImg})` }}></div>
+							className={clsx(s.trend, s.image)} ref={trendRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(trendRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/trend.mp4' type='video/mp4'/>
+								</video>
+							</div>
 					</div>
 					<div className={s.left}>
-						<div
-							className={clsx(s.end, s.image)}
-							style={{ backgroundImage: `url(${endImg})` }}></div>
-						<div
-							className={clsx(s.m_carmax, s.image)}
-							style={{ backgroundImage: `url(${mCarmaxImg})` }}></div>
-						<div
-							className={clsx(s.gen, s.image)}
-							style={{ backgroundImage: `url(${genImg})` }}></div>
+						<div className={clsx(s.end, s.image)} ref={endRef}>
+							<video className={""} autoPlay loop muted playsInline
+								style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(endRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+								<source src='./video/end.mp4' type='video/mp4'/>
+							</video>
+						</div>
+						<div className={clsx(s.m_carmax, s.image)} ref={carmaxRef} >
+							<video className={""} autoPlay loop muted playsInline
+								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(carmaxRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+								<source src='./video/carmax.mp4' type='video/mp4'/>
+							</video>
+						</div>
+						<div className={clsx(s.gen, s.image)} ref={gemRef}>
+							<video className={""} autoPlay loop muted playsInline
+								style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(gemRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+								<source src='./video/gem.mp4' type='video/mp4'/>
+							</video>
+						</div>
 						<div
 							className={clsx(s.video, s.image)}
 							style={{ backgroundImage: `url(${videoImg})` }}></div>
@@ -74,33 +100,57 @@ export function Project() {
 			<div className={s.container_mobile}>
 				<h2>Портфолио</h2>
 				<div className={s.image_modile}>
-					<div className={clsx(s.carmax, s.image)}
-						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<div className={clsx(s.carmax, s.image)}>
+						<video className={""} autoPlay loop muted playsInline
+							style={{width: '100%', height: '100%'}}>
+							<source src='./video/carmax.mp4' type='video/mp4'/>
+						</video>
+					</div>
 					<h3>Carmax</h3>
 				</div>
 				<div className={s.image_modile}>
-					<div className={clsx(s.carmax, s.image)}
-						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<div className={clsx(s.carmax, s.image)}>
+						<video className={""} autoPlay loop muted playsInline
+							style={{width: '100%', height: '100%'}}>
+							<source src='./video/end.mp4' type='video/mp4'/>
+						</video>
+					</div>
 					<h3>xpad pro</h3>
 				</div>
 				<div className={s.image_modile}>
-					<div className={clsx(s.carmax, s.image)}
-						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<div className={clsx(s.carmax, s.image)} >
+						<video className={""} autoPlay loop muted playsInline
+							style={{width: '100%', height: '100%'}}>
+							<source src='./video/turn.mp4' type='video/mp4'/>
+						</video>
+					</div>
 					<h3>kf OLD VERSION</h3>
 				</div>
 				<div className={s.image_modile}>
-					<div className={clsx(s.carmax, s.image)}
-						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<div className={clsx(s.carmax, s.image)} >
+						<video className={""} autoPlay loop muted playsInline
+							style={{width: '100%', height: '100%'}}>
+							<source src='./video/bank.mp4' type='video/mp4'/>
+						</video>
+					</div>
 					<h3>VAKKO WALLET</h3>
 				</div>
 				<div className={s.image_modile}>
-					<div className={clsx(s.carmax, s.image)}
-						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<div className={clsx(s.carmax, s.image)} >
+						<video className={""} autoPlay loop muted playsInline
+							style={{width: '100%', height: '100%'}}>
+							<source src='./video/trend.mp4' type='video/mp4'/>
+						</video>
+					</div>
 					<h3>aLPHA DEX</h3>
 				</div>
 				<div className={s.image_modile}>
-					<div className={clsx(s.carmax, s.image)}
-						style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+					<div className={clsx(s.carmax, s.image)} >
+						<video className={""} autoPlay loop muted playsInline
+							style={{width: '100%', height: '100%'}}>
+							<source src='./video/gem.mp4' type='video/mp4'/>
+						</video>
+					</div>
 					<h3>ARK PRODUCTION</h3>
 				</div>
 			</div>

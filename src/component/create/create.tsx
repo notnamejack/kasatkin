@@ -4,33 +4,33 @@ import { useEffect, useRef, useState } from 'react';
 
 export function Create() {
 	const [scrollY, setScrollY] = useState(0);
-  const [thirdVisible, setThirdVisible] = useState(false);
-  const thirdBlockRef = useRef<HTMLDivElement>(null);
-  // Обновление scrollY при прокрутке
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  // Отслеживание появления третьего блока в зоне видимости
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setThirdVisible(entry.isIntersecting);
-      },
-      { threshold: 0.6 }
-    );
-    if (thirdBlockRef.current) {
-      observer.observe(thirdBlockRef.current);
-    }
-    return () => {
-      if (thirdBlockRef.current) {
-        observer.unobserve(thirdBlockRef.current);
-      }
-    };
-  }, []);
+	const [thirdVisible, setThirdVisible] = useState(false);
+	const thirdBlockRef = useRef<HTMLDivElement>(null);
+	// Обновление scrollY при прокрутке
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+	const handleScroll = () => {
+		setScrollY(window.scrollY);
+	};
+	// Отслеживание появления третьего блока в зоне видимости
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+		([entry]) => {
+			setThirdVisible(entry.isIntersecting);
+		},
+		{ threshold: 0.6 }
+		);
+		if (thirdBlockRef.current) {
+		observer.observe(thirdBlockRef.current);
+		}
+		return () => {
+		if (thirdBlockRef.current) {
+			observer.unobserve(thirdBlockRef.current);
+		}
+		};
+	}, []);
 	// Стили для первого блока: смещение вверх и исчезание
 	const blockOneStyle: React.CSSProperties = {
 		transform: `translateY(-${scrollY * 2}px)`,
