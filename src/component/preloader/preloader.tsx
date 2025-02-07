@@ -15,6 +15,14 @@ export function Preloader(){
 		};
 	}, []);
 
+	useEffect(() => {
+		if(!isLoaded)
+			document.body.style.overflow = "hidden"
+		else
+			document.body.style.overflow = ""
+
+	},[isLoaded])
+
 	const intervalId = setInterval(() => {
 		setProgress(prev => {
 		  if (prev < 90) {
@@ -37,49 +45,23 @@ export function Preloader(){
 	const updateProgress = () => {
 		console.log(document.readyState)
 		if (document.readyState === "loading") {
-			setProgress(30); // Предварительная загрузка
+			setProgress(10); // Предварительная загрузка
 		} else if (document.readyState === "interactive") {
-			setProgress(70); // DOM загружен
+			setProgress(30); // DOM загружен
 		} else if (document.readyState === "complete") {
 			setProgress(90);
-		setTimeout(() => {setIsLoaded(true),setProgress(100);}, 500); // Добавляем небольшую задержку
+			setTimeout(() => {setProgress(100);}, 100);
+			setTimeout(() => {setIsLoaded(true)}, 500); // Добавляем небольшую задержку
 		// setIsLoaded(true)
 		}
 	};
 
-//   if (isLoaded) return null;
+  if (isLoaded) return null;
   return (
     <div className={s.loader_сontainer}>
-      {/* <div style={{ ...styles.loaderBar, width: `${progress}%` }} /> */}
-
 		<div className={s.loader_bar}>
 			<p>{progress}%</p>
 		</div>
     </div>
   );
 }
-
-const styles = {
-	loaderContainer: {
-	  position: "fixed" as const,
-	  top: 0,
-	  left: 0,
-	  width: "100%",
-	  height: "4px",
-	  backgroundColor: "#f3f3f3",
-	  zIndex: 9999,
-	},
-	loaderBar: {
-	  height: "100%",
-	  backgroundColor: "#007bff",
-	  transition: "width 0.3s ease-in-out",
-	},
-	loaderText: {
-	  position: "fixed" as const,
-	  top: "50%",
-	  left: "50%",
-	  transform: "translate(-50%, -50%)",
-	  fontSize: "16px",
-	  fontWeight: "bold",
-	},
-  };

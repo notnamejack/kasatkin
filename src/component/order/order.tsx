@@ -13,7 +13,7 @@ interface IForm{
 	name: string | undefined,
 	phone: string | undefined
 }
-const startScroll = 5000;
+const startScroll = 5200;
 export function Order () {
 
 	const { form, handleInputChange, setForm } = useForm<IForm>({
