@@ -58,7 +58,7 @@ export function Preloader(){
 
   if (isLoaded) return null;
   return (
-    <div className={s.loader_сontainer}>
+    <div className={s.loader_container}>
 		<div className={s.loader_bar}>
 			<p>{progress}%</p>
 		</div>

@@ -1,4 +1,4 @@
-.loader_сontainer{
+.loader_container{
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -21,6 +21,30 @@
 			font-style: normal;
 			font-weight: 400;
 			line-height: 100%; /* 230px */
+		}
+	}
+}
+
+@media (max-width: 1024px){
+	.loader_container{
+		.loader_bar{
+			p{
+				font-size: 172px;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 550px){
+	.loader_container{
+		.loader_bar{
+			padding: 20px;
+			width: calc(100% - 40px);
+			min-height: calc(100% - 40px);
+			p{
+				font-size: 72px;
+			}
 		}
 	}
 }
