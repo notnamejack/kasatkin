@@ -39,10 +39,11 @@ export function Project() {
 	const changeScroll = () => {
 		setScroll(window.scrollY);
 	};
+	const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
 	return (
 		<section className={s.project}>
-			<div className={s.container_list}>
+			{!isMobile && <div className={s.container_list}>
 				<div className={s.deactop_logo}>
 					<Logo />
 				</div>
@@ -95,9 +96,9 @@ export function Project() {
 							style={{ backgroundImage: `url(${videoImg})` }}></div>
 					</div>
 				</div>
-			</div>
+			</div>}
 			<div className={s.after}></div>
-			<div className={s.container_mobile}>
+			{isMobile && <div className={s.container_mobile}>
 				<h2>Портфолио</h2>
 				<div className={s.image_modile}>
 					<div className={clsx(s.carmax, s.image)}>
@@ -153,7 +154,7 @@ export function Project() {
 					</div>
 					<h3>ARK PRODUCTION</h3>
 				</div>
-			</div>
+			</div>}
 		</section>
 	);
 }
