@@ -40,14 +40,14 @@ export function Create() {
 	// Определяем высоту второго блока:
 	let blockTwoHeight: number;
 	if (thirdVisible) {
-		blockTwoHeight = 50;
+		blockTwoHeight = 500;
 	} else {
 		// Увеличение высоты пропорционально прокрутке
-		blockTwoHeight = 50 + scrollY * 0.1 * 0.8;
+		blockTwoHeight = 500 + scrollY  * 0.8;
 	}
 	// Стили для второго блока: увеличение высоты и смещение вверх для эффекта "наезда"
 	const blockTwoStyle: React.CSSProperties = {
-		height: `${blockTwoHeight}vh`,
+		height: `${blockTwoHeight}px`,
 		transform: `translateY(${!thirdVisible ?`-${scrollY * 0.9}` : -80}px)`,
 	};
 
@@ -60,7 +60,7 @@ export function Create() {
 					</h1>
 				</div>
 			</div>
-			<div style={{position: 'relative', height: `50vh`, width: `100%`}}>
+			<div style={{position: 'relative', height: `500px`, width: `100%`}}>
 				<div className={s.block_two} style={blockTwoStyle}>
 					<div className={s.container_video}>
 						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
