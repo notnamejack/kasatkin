@@ -4,7 +4,7 @@ import { Main } from '../pages';
 export const App = () => {
 	return (
 		<>
-			{/* <Preloader /> */}
+			<Preloader />
 			<Main />
 		</>
 	);

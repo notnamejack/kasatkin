@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react";
-
+import s from './preloader.module.scss';
 
 export function Preloader(){
 	const [progress, setProgress] = useState(0);
@@ -47,11 +47,14 @@ export function Preloader(){
 		}
 	};
 
-  if (isLoaded) return null;
+//   if (isLoaded) return null;
   return (
-    <div style={styles.loaderContainer}>
-      <div style={{ ...styles.loaderBar, width: `${progress}%` }} />
-      <p style={styles.loaderText}>{progress}%</p>
+    <div className={s.loader_сontainer}>
+      {/* <div style={{ ...styles.loaderBar, width: `${progress}%` }} /> */}
+
+		<div className={s.loader_bar}>
+			<p>{progress}%</p>
+		</div>
     </div>
   );
 }

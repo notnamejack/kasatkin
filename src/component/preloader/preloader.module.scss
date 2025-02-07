@@ -1,0 +1,26 @@
+.loader_сontainer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #F6F6F6;
+	z-index: 1000;
+	.loader_bar{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-end;
+		padding: 120px;
+		width: calc(100% - 240px);
+		min-height: calc(100% - 240px);
+		p{
+			color: #000;
+			font-family: BOWLER;
+			font-size: 230px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 100%; /* 230px */
+		}
+	}
+}
