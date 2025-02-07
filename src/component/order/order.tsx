@@ -103,8 +103,8 @@ export function Order () {
 					<h2>Начните реализацию своего проекта прямо сейчас</h2>
 					<div className={s.footer_link}>
 						<div className={s.message}>
-							<a href=''><TelegaBlack /></a>
-							<a href=''><Watsapp /></a>
+							<a href='https://t.me/kasatkinfoundation'><TelegaBlack /></a>
+							<a href='https://api.whatsapp.com/send/?phone=79932494825&text&type=phone_number&app_absent=0'><Watsapp /></a>
 						</div>
 						<div className={s.logo}>
 							<Logo className={s.desctop}/>
@@ -112,9 +112,9 @@ export function Order () {
 							<LogoMobile className={s.mobile}/>
 						</div>
 						<div className={s.police}>
-							<a>Политика конфиденцальности</a>
+							<a href='https://kasatkin.io/ru/privacy'>Политика конфиденцальности</a>
 							<p>Все права защищены</p>
-							<a>info@kasatkin.io</a>
+							<a href="mailto:info@kasatkin.io">info@kasatkin.io</a>
 						</div>
 					</div>
 				</div>
