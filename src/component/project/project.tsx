@@ -11,7 +11,7 @@ import genImg from './assets/gen.jpg';
 import videoImg from './assets/video.jpg';
 import clsx from 'clsx';
 
-const startScroll = 2300;
+const startScroll = 1900;
 export function Project() {
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);

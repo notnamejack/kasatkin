@@ -4,7 +4,6 @@
 	align-items: center;
 	gap: 60px;
 	width: 100%;
-	margin-bottom: 21.5vh;
 	.block_one{
 		height: 50vh;
 		display: flex;
@@ -36,7 +35,7 @@
 	}
 	.block_two{
 		background-color: transparent;
-		transition: height 0.3s linear, transform .3s linear 0.01s;
+		transition: height 0.1s linear, transform .1s linear;
 		display: flex;
 		justify-content: center;
 		align-items: center;
