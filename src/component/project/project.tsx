@@ -1,27 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import { ReactComponent as Logo } from './assets/project-logo.svg';
 import s from './project.module.scss';
-import carmaxImg from './assets/carmax.jpg';
-import turnImg from './assets/turn.jpg';
-import bankImg from './assets/bank.jpg';
-import trendImg from './assets/trend.jpg';
-import endImg from './assets/end.jpg';
-import mCarmaxImg from './assets/m-carmax.jpg';
-import genImg from './assets/gen.jpg';
 import videoImg from './assets/video.jpg';
 import clsx from 'clsx';
 
-const startScroll = 1900;
+const startScroll = 1800;
 export function Project() {
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);
 
 	const bankRef = useRef<HTMLDivElement>(null);
+	const carmaxTRef = useRef<HTMLDivElement>(null);
 	const carmaxRef = useRef<HTMLDivElement>(null);
 	const endRef = useRef<HTMLDivElement>(null);
 	const gemRef = useRef<HTMLDivElement>(null);
 	const trendRef = useRef<HTMLDivElement>(null);
 	const turnRef = useRef<HTMLDivElement>(null);
+	const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
 	useEffect(() => {
 		if (scroll >= startScroll)
@@ -39,7 +34,6 @@ export function Project() {
 	const changeScroll = () => {
 		setScroll(window.scrollY);
 	};
-	const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
 	return (
 		<section className={s.project}>
@@ -49,9 +43,12 @@ export function Project() {
 				</div>
 				<div className={s.list_project} ref={refProject}>
 					<div className={s.rigth}>
-						<div
-							className={clsx(s.carmax, s.image)}
-							style={{ backgroundImage: `url(${carmaxImg})` }}></div>
+						<div className={clsx(s.carmax, s.image)} ref={carmaxTRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(1.2) translateY(${(carmaxTRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/car-max.mp4' type='video/mp4'/>
+								</video>
+							</div>
 						<div className={clsx(s.turn, s.image)} ref={turnRef}>
 							<video className={""} autoPlay loop muted playsInline
 								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(turnRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px) translatex(50px)`}}>

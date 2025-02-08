@@ -6,6 +6,10 @@ export function Create() {
 	const [scrollY, setScrollY] = useState(0);
 	const [thirdVisible, setThirdVisible] = useState(false);
 	const thirdBlockRef = useRef<HTMLDivElement>(null);
+	const isTab = window.matchMedia("(max-width: 1024px)").matches;
+	const isMobile = window.matchMedia("(max-width: 550px)").matches;
+	console.log(isTab)
+	console.log(isMobile)
 	// Обновление scrollY при прокрутке
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
@@ -20,7 +24,7 @@ export function Create() {
 		([entry]) => {
 			setThirdVisible(entry.isIntersecting);
 		},
-		{ threshold: 0.6 }
+		{ threshold: !isMobile ? !isTab ? 0.6 : 0.4 : 0.5	 }
 		);
 		if (thirdBlockRef.current) {
 		observer.observe(thirdBlockRef.current);
@@ -40,15 +44,15 @@ export function Create() {
 	// Определяем высоту второго блока:
 	let blockTwoHeight: number;
 	if (thirdVisible) {
-		blockTwoHeight = 500;
+		blockTwoHeight = (!isMobile ? !isTab ? 500 : 300 : 200);
 	} else {
 		// Увеличение высоты пропорционально прокрутке
-		blockTwoHeight = 500 + scrollY  * 0.8;
+		blockTwoHeight = (!isMobile ? !isTab ? 500 : 300 : 200) + scrollY  * 0.8;
 	}
 	// Стили для второго блока: увеличение высоты и смещение вверх для эффекта "наезда"
 	const blockTwoStyle: React.CSSProperties = {
 		height: `${blockTwoHeight}px`,
-		transform: `translateY(${!thirdVisible ?`-${scrollY * 0.9}` : -80}px)`,
+		transform: `translateY(${!thirdVisible ?`-${scrollY * 0.9}` : -`${!isMobile ? !isTab ? 80 : 0 : 0}`}px)`,
 	};
 
 	return (
@@ -60,7 +64,7 @@ export function Create() {
 					</h1>
 				</div>
 			</div>
-			<div style={{position: 'relative', height: `500px`, width: `100%`}}>
+			<div style={{position: 'relative', height: `${!isMobile ? !isTab ? 500 : 300 : 200}px`, width: `100%`}}>
 				<div className={s.block_two} style={blockTwoStyle}>
 					<div className={s.container_video}>
 						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
