@@ -43,50 +43,84 @@ export function Project() {
 				</div>
 				<div className={s.list_project} ref={refProject}>
 					<div className={s.rigth}>
-						<div className={clsx(s.carmax, s.image)} ref={carmaxTRef}>
+						<div className={clsx(s.container_image, s.carmax)}>
+							<div className={clsx(s.image)} ref={carmaxTRef}>
 								<video className={""} autoPlay loop muted playsInline
 									style={{width: '100%', height: '100%',transform: `scale(1.2) translateY(${(carmaxTRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
 									<source src='./video/car-max.mp4' type='video/mp4'/>
 								</video>
 							</div>
-						<div className={clsx(s.turn, s.image)} ref={turnRef}>
-							<video className={""} autoPlay loop muted playsInline
-								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(turnRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px) translatex(50px)`}}>
-								<source src='./video/turn.mp4' type='video/mp4'/>
-							</video>
+							<div className={s.image_name}>
+								<h3>Carmax</h3>
+							</div>
 						</div>
-						<div className={clsx(s.bank, s.image)} ref={bankRef}>
-							<video className={""} autoPlay loop muted playsInline
-								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(bankRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
-								<source src='./video/bank.mp4' type='video/mp4'/>
-							</video>
+						<div className={clsx(s.container_image, s.turn)}>
+							<div className={clsx(s.image)} ref={turnRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(turnRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px) translatex(50px)`}}>
+									<source src='./video/turn.mp4' type='video/mp4'/>
+								</video>
+							</div>
+							<div className={s.image_name}>
+								<h3>kf OLD VERSION</h3>
+							</div>
 						</div>
-						<div
-							className={clsx(s.trend, s.image)} ref={trendRef}>
+						<div className={clsx(s.container_image, s.bank)}>
+							<div className={clsx(s.image)} ref={bankRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(bankRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/bank.mp4' type='video/mp4'/>
+								</video>
+							</div>
+							<div className={s.image_name}>
+								<h3>VAKKO WALLET</h3>
+							</div>
+						</div>
+						<div className={clsx(s.container_image, s.trend)}>
+							<div className={clsx(s.image)} ref={trendRef}>
 								<video className={""} autoPlay loop muted playsInline
 									style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(trendRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
 									<source src='./video/trend.mp4' type='video/mp4'/>
 								</video>
 							</div>
+							<div className={s.image_name}>
+								<h3>aLPHA DEX</h3>
+							</div>
+						</div>
 					</div>
 					<div className={s.left}>
-						<div className={clsx(s.end, s.image)} ref={endRef}>
-							<video className={""} autoPlay loop muted playsInline
-								style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(endRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
-								<source src='./video/end.mp4' type='video/mp4'/>
-							</video>
+						<div className={clsx(s.container_image, s.end)}>
+							<div className={clsx(s.image)} ref={endRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(endRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/end.mp4' type='video/mp4'/>
+								</video>
+							</div>
+							<div className={s.image_name}>
+								<h3>xpad pro</h3>
+							</div>
 						</div>
-						<div className={clsx(s.m_carmax, s.image)} ref={carmaxRef} >
-							<video className={""} autoPlay loop muted playsInline
-								style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(carmaxRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
-								<source src='./video/carmax.mp4' type='video/mp4'/>
-							</video>
+						<div className={clsx(s.container_image, s.m_carmax)}>
+							<div className={clsx(s.image)} ref={carmaxRef} >
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(carmaxRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/carmax.mp4' type='video/mp4'/>
+								</video>
+							</div>
+							<div className={s.image_name}>
+								<h3>Carmax</h3>
+							</div>
 						</div>
-						<div className={clsx(s.gen, s.image)} ref={gemRef}>
-							<video className={""} autoPlay loop muted playsInline
-								style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(gemRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
-								<source src='./video/gem.mp4' type='video/mp4'/>
-							</video>
+						<div className={clsx(s.container_image, s.gen)}>
+							<div className={clsx(s.image)} ref={gemRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(gemRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/gem.mp4' type='video/mp4'/>
+								</video>
+							</div>
+							<div className={s.image_name}>
+								<h3>ARK PRODUCTION</h3>
+							</div>
 						</div>
 						<div
 							className={clsx(s.video, s.image)}
