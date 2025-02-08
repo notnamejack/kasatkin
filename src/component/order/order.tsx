@@ -14,6 +14,7 @@ interface IForm{
 	phone: string | undefined
 }
 const startScroll = 5200;
+const startMScroll = 3500;
 export function Order () {
 
 	const { form, handleInputChange, setForm } = useForm<IForm>({
@@ -23,10 +24,11 @@ export function Order () {
 
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);
+	const isMobile = window.matchMedia("(max-width: 550px)").matches;
 
 	useEffect(() => {
-		if (scroll >= startScroll)
-			refProject.current?.scrollTo(0, (scroll - startScroll) * 0.7);
+		if (scroll >= (!isMobile ? startScroll : startMScroll))
+			refProject.current?.scrollTo(0, (scroll - (!isMobile ? startScroll : startMScroll)) * 0.7);
 		else refProject.current?.scrollTo(0, 0);
 	}, [scroll]);
 
