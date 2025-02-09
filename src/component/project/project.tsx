@@ -16,6 +16,7 @@ export function Project() {
 	const gemRef = useRef<HTMLDivElement>(null);
 	const trendRef = useRef<HTMLDivElement>(null);
 	const turnRef = useRef<HTMLDivElement>(null);
+	const proRef = useRef<HTMLDivElement>(null);
 	const isMobile = window.matchMedia("(max-width: 1024px)").matches;
 
 	useEffect(() => {
@@ -122,9 +123,17 @@ export function Project() {
 								<h3>ARK PRODUCTION</h3>
 							</div>
 						</div>
-						<div
-							className={clsx(s.video, s.image)}
-							style={{ backgroundImage: `url(${videoImg})` }}></div>
+						<div className={clsx(s.container_image, s.video)}>
+							<div className={clsx(s.image)} ref={proRef}>
+								<video className={""} autoPlay loop muted playsInline
+									style={{width: '100%', height: '100%',transform: `scale(2) translateY(${(proRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
+									<source src='./video/pro.mp4' type='video/mp4'/>
+								</video>
+							</div>
+							<div className={s.image_name}>
+								<h3>ARK PRODUCTION</h3>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>}
@@ -180,7 +189,7 @@ export function Project() {
 					<div className={clsx(s.carmax, s.image)} >
 						<video className={""} autoPlay loop muted playsInline
 							style={{width: '100%', height: '100%'}}>
-							<source src='./video/gem.mp4' type='video/mp4'/>
+							<source src='./video/pro.mp4' type='video/mp4'/>
 						</video>
 					</div>
 					<h3>ARK PRODUCTION</h3>

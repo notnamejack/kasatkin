@@ -8,8 +8,7 @@ export function Create() {
 	const thirdBlockRef = useRef<HTMLDivElement>(null);
 	const isTab = window.matchMedia("(max-width: 1024px)").matches;
 	const isMobile = window.matchMedia("(max-width: 550px)").matches;
-	console.log(isTab)
-	console.log(isMobile)
+
 	// Обновление scrollY при прокрутке
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
@@ -24,7 +23,7 @@ export function Create() {
 		([entry]) => {
 			setThirdVisible(entry.isIntersecting);
 		},
-		{ threshold: !isMobile ? !isTab ? 0.6 : 0.4 : 0.5	 }
+		{ threshold: !isTab ? 0.6 : 0.4	 }
 		);
 		if (thirdBlockRef.current) {
 		observer.observe(thirdBlockRef.current);
@@ -44,35 +43,43 @@ export function Create() {
 	// Определяем высоту второго блока:
 	let blockTwoHeight: number;
 	if (thirdVisible) {
-		blockTwoHeight = (!isMobile ? !isTab ? 500 : 300 : 200);
+		blockTwoHeight = ( !isTab ? 500 : 300);
 	} else {
 		// Увеличение высоты пропорционально прокрутке
-		blockTwoHeight = (!isMobile ? !isTab ? 500 : 300 : 200) + scrollY  * 0.8;
+		blockTwoHeight = (!isTab ? 500 : 300) + scrollY  * 0.8;
 	}
 	// Стили для второго блока: увеличение высоты и смещение вверх для эффекта "наезда"
 	const blockTwoStyle: React.CSSProperties = {
 		height: `${blockTwoHeight}px`,
-		transform: `translateY(${!thirdVisible ?`-${scrollY * 0.9}` : -`${!isMobile ? !isTab ? 80 : 0 : 0}`}px)`,
+		transform: `translateY(${!thirdVisible ?`-${scrollY * 0.9}` : -`${!isTab ? 80 : 0}`}px)`,
 	};
 
 	return (
 		<section className={s.create}>
-			<div className={s.block_one} style={blockOneStyle}>
+			<div className={s.block_one} style={!isMobile ? blockOneStyle : {}}>
 				<div className={s.container_title}>
 					<h1>
 						Делаем лендинги, <strong>которые работают на результат</strong>
 					</h1>
 				</div>
 			</div>
-			<div style={{position: 'relative', height: `${!isMobile ? !isTab ? 500 : 300 : 200}px`, width: `100%`}}>
-				<div className={s.block_two} style={blockTwoStyle}>
+			{!isMobile &&
+			<div style={!isMobile ? {position: 'relative', height: `${!isTab ? 500 : 300}px`, width: `100%`} : {}}>
+				<div className={s.block_two} style={!isMobile ? blockTwoStyle : {}}>
 					<div className={s.container_video}>
 						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
 							<source src='./video/start.mp4' type='video/mp4'/>
 						</video>
 					</div>
 				</div>
-			</div>
+			</div>}
+			{isMobile &&
+				<div className={s.container_video}>
+					<video className={s.video} autoPlay loop muted playsInline style={{width: '100%', height: '100%'}}>
+						<source src='./video/start.mp4' type='video/mp4'/>
+					</video>
+				</div>
+			}
 			<div className={s.block_three} ref={thirdBlockRef}>
 				<div className={s.goal}>
 					<h2>

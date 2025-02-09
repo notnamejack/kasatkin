@@ -199,8 +199,11 @@
 @media (max-width: 500px) {
 	.create{
 		margin-bottom: 80px;
-		padding-top: 8.8vh;
+		padding-top: 100px;
 		gap: 30px;
+		.block_one{
+			height: 160px;
+		}
 		.container_title{
 			padding: 0 16px;
 			width: calc(100% - 32px);
@@ -209,6 +212,13 @@
 				strong{
 					font-size: 32px;
 				}
+			}
+		}
+		.container_video{
+			height: 230px;
+			z-index: 1;
+			.video{
+				height: 100% ;
 			}
 		}
 		.goal{
