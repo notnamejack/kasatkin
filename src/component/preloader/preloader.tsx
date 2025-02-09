@@ -43,7 +43,6 @@ export function Preloader(){
 	};
 
 	const updateProgress = () => {
-		console.log(document.readyState)
 		if (document.readyState === "loading") {
 			setProgress(10); // Предварительная загрузка
 		} else if (document.readyState === "interactive") {
