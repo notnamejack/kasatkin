@@ -2,6 +2,7 @@ const HTMLWebpackPlugins = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 const path = require('path'); //для того чтобы превратить отнсительный путь в абсолютный мы будем использовать пакет path
 const webpack = require('webpack');
 
@@ -93,6 +94,22 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{ from: 'public/video', to: 'video' },]
-		  }),
+		}),
+		new PreloadWebpackPlugin({
+			// указываем, что тип ссылки будет preload
+			rel: 'preload',
+			// включаем все ассеты, но фильтруем только шрифты
+			include: 'allAssets',
+			// fileWhitelist – это регулярное выражение для выбора файлов шрифтов.
+			// Например, можно выбрать файлы с расширениями .woff, .woff2, .ttf или .otf.
+			fileWhitelist: [/\.(woff2?|ttf|otf)$/],
+			// функция as() позволяет явно задать атрибут as для каждого файла.
+			// Здесь для любых подходящих файлов мы возвращаем 'font'
+			as(entry) {
+			  return 'font';
+			},
+			// Добавляем атрибут crossorigin, чтобы браузер правильно работал с CORS при загрузке шрифтов.
+			crossorigin: 'anonymous'
+		}),
 	],
 };
