@@ -1,5 +1,6 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import s from './preloader.module.scss';
+import { ReactComponent as Number } from './assets/number.svg';
 
 export function Preloader(){
 	const [progress, setProgress] = useState(0);
@@ -59,6 +60,7 @@ export function Preloader(){
   return (
     <div className={s.loader_container}>
 		<div className={s.loader_bar}>
+			{/* {progress >= 30 ? <p>{progress}%</p> : <Number/>} */}
 			<p>{progress}%</p>
 		</div>
     </div>

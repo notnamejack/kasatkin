@@ -25,9 +25,6 @@ export function CreateProduct () {
 		}
 	},[thirdBlockRef?.current?.getBoundingClientRect()?.y])
 
-	console.log(start)
-	console.log(relative)
-
 	const handleScroll = () => {
 		setScrollY(window.scrollY);
 	};
