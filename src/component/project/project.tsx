@@ -4,7 +4,7 @@ import s from './project.module.scss';
 import videoImg from './assets/video.jpg';
 import clsx from 'clsx';
 
-const startScroll = 1800;
+const startScroll = 1600;
 export function Project() {
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);

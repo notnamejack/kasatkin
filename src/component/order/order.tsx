@@ -14,7 +14,7 @@ interface IForm{
 	phone: string | undefined
 }
 const startScroll = 5200;
-const startMScroll = 3500;
+const startMScroll = 3000;
 export function Order () {
 
 	const { form, handleInputChange, setForm } = useForm<IForm>({
