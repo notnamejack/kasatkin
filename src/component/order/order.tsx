@@ -13,7 +13,7 @@ interface IForm{
 	name: string | undefined,
 	phone: string | undefined
 }
-const startScroll = 5200;
+const startScroll = 5000;
 const startMScroll = 3000;
 export function Order () {
 
@@ -60,7 +60,7 @@ export function Order () {
 			<div className={s.sticky} ref={refProject}>
 				<div className={s.order_container}>
 					<div className={s.form_background}>
-						<video className={s.video} autoPlay loop muted playsInline style={{width: '100%'}}>
+						<video className={s.video} autoPlay loop muted playsInline style={{ height: '100vh'}}>
 							<source src='./video/order.mp4' type='video/mp4'/>
 						</video>
 					</div>

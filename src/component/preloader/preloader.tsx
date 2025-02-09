@@ -5,7 +5,7 @@ export function Preloader(){
 	const [progress, setProgress] = useState(0);
   	const [isLoaded, setIsLoaded] = useState(false);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		updateProgress();
 		// window.addEventListener("load", updateProgress);
 		document.addEventListener("readystatechange", updateProgress);

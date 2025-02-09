@@ -1,3 +1,13 @@
+
+
+@font-face {
+	font-weight: 400;
+	font-family: 'BOWLER';
+	font-style: normal;
+	font-display: swap;
+	src: local('BOWLER'), url('./fonts/BOWLER.otf') format('opentype');
+}
+
 #root {
 	display: flex;
 	flex-direction: column;
@@ -31,12 +41,4 @@ main {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-}
-
-@font-face {
-	font-weight: 400;
-	font-family: 'BOWLER';
-	font-style: normal;
-	font-display: swap;
-	src: local('BOWLER'), url('./fonts/BOWLER.otf') format('opentype');
 }
