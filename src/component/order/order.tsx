@@ -8,6 +8,7 @@ import { ReactComponent as Watsapp } from './assets/watsapp.svg';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import { ReactComponent as LogoTab } from './assets/logo-tab.svg';
 import { ReactComponent as LogoMobile } from './assets/logo-mobile.svg';
+import axios from "axios";
 
 interface IForm{
 	name: string | undefined,
@@ -21,6 +22,8 @@ export function Order () {
 		name: undefined,
 		phone: undefined,
 	});
+
+	const [send, setSend] = useState(false);
 
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);
@@ -47,7 +50,31 @@ export function Order () {
 		(e: React.ChangeEvent<HTMLFormElement>) => {
 			e.preventDefault();
 			if (form.name && form.phone) {
-				console.log(`${form.name} ${form.phone}`)
+				setSend(true);
+				let formData = new FormData();
+				formData.append('name', form.name);
+				formData.append('phone', form.phone);
+				formData.append('project_type', 'landing');
+
+				axios({
+					method: 'POST',
+					url: `https://kasatkin.io/api/sendmail/kasatkin`,
+					data: formData,
+				  }).then(resp => {
+					  switch(resp.status){
+						case 200:{
+						  return resp.data
+						}
+						default:{
+						  return null;
+						}
+					  }
+					})
+					.catch(error => console.log(error.response))
+					.finally(() => {
+						setSend(false);
+						setForm({ ...form, name: '', phone: '' })
+					})
 			}
 			form.name === undefined && setForm({ ...form, name: '' });
 			form.phone === undefined && setForm({ ...form, phone: '' });
@@ -91,7 +118,7 @@ export function Order () {
 								</div>
 							</div>
 							<div className={s.input_footer_btn}>
-								<button>Отправить</button>
+								<button disabled={send}>Отправить</button>
 								<p>или</p>
 								<a href='https://t.me/kasatkinfoundation'>
 									<Telega />
