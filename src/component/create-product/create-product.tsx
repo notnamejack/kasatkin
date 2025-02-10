@@ -145,6 +145,7 @@ export function CreateProduct () {
 						</div>
 					</div>
 				</div>
+				<div className={s.after}></div>
 			</div>
 		</section>
 	)
