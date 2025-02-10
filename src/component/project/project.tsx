@@ -112,7 +112,7 @@ export function Project() {
 								<h3>Carmax</h3>
 							</div>
 						</a>
-						<div className={clsx(s.container_image, s.gen)}>
+						<a href='https://ushi.pro/' target='_blank' title='USHI'  className={clsx(s.container_image, s.gen)}>
 							<div className={clsx(s.image)} ref={gemRef}>
 								<video className={""} autoPlay loop muted playsInline
 									style={{width: '100%', height: '100%',transform: `scale(1.3) translateY(${(gemRef?.current?.getBoundingClientRect()?.y || 100) * 0.01}px)`}}>
@@ -120,9 +120,9 @@ export function Project() {
 								</video>
 							</div>
 							<div className={s.image_name}>
-								<h3>ARK PRODUCTION</h3>
+								<h3>USHI</h3>
 							</div>
-						</div>
+						</a>
 						<a href='https://arkproduction.kasatkin.io/' target='_blank' title='ark production' className={clsx(s.container_image, s.video)}>
 							<div className={clsx(s.image)} ref={proRef}>
 								<video className={""} autoPlay loop muted playsInline

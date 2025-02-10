@@ -11,16 +11,16 @@ import { ReactComponent as LogoMobile } from './assets/logo-mobile.svg';
 import axios from "axios";
 
 interface IForm{
-	name: string | undefined,
-	phone: string | undefined
+	name: string,
+	phone: string
 }
 const startScroll = 5600;
 const startMScroll = 3000;
 export function Order () {
 
 	const { form, handleInputChange, setForm } = useForm<IForm>({
-		name: undefined,
-		phone: undefined,
+		name: '',
+		phone: '',
 	});
 
 	const [send, setSend] = useState(false);
@@ -49,7 +49,7 @@ export function Order () {
 	const formSubmit = useCallback(
 		(e: React.ChangeEvent<HTMLFormElement>) => {
 			e.preventDefault();
-			if (form.name && form.phone) {
+			if (form.name != '' && form.phone != '') {
 				setSend(true);
 				let formData = new FormData();
 				formData.append('name', form.name);
@@ -120,7 +120,7 @@ export function Order () {
 							<div className={s.input_footer_btn}>
 								<button disabled={send}>Отправить</button>
 								<p>или</p>
-								<a href='https://t.me/kasatkinfoundation'>
+								<a href='https://t.me/kasatkinfoundation' target='_blank'>
 									<Telega />
 									Связаться через телеграм
 								</a>
@@ -132,8 +132,8 @@ export function Order () {
 					<h2>Начните реализацию своего проекта прямо сейчас</h2>
 					<div className={s.footer_link}>
 						<div className={s.message}>
-							<a href='https://t.me/kasatkinfoundation'><TelegaBlack /></a>
-							<a href='https://api.whatsapp.com/send/?phone=79932494825&text&type=phone_number&app_absent=0'><Watsapp /></a>
+							<a href='https://t.me/kasatkinfoundation' target='_blank'><TelegaBlack /></a>
+							<a href='https://api.whatsapp.com/send/?phone=79932494825&text&type=phone_number&app_absent=0' target='_blank'><Watsapp /></a>
 						</div>
 						<div className={s.logo}>
 							<Logo className={s.desctop}/>
@@ -141,7 +141,7 @@ export function Order () {
 							<LogoMobile className={s.mobile}/>
 						</div>
 						<div className={s.police}>
-							<a href='https://kasatkin.io/ru/privacy'>Политика конфиденцальности</a>
+							<a href='https://kasatkin.io/ru/privacy' target='_blank'>Политика конфиденцальности</a>
 							<p>Все права защищены</p>
 							<a href="mailto:info@kasatkin.io">info@kasatkin.io</a>
 						</div>
