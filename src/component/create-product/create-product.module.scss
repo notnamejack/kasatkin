@@ -200,7 +200,7 @@
 		.block_three{
 			transform: translateY(-125px) !important;
 			.goal{
-				padding-top: 40px;
+				padding-top: 200px;
 				gap: 42px;
 				h2{
 					padding: 0 24px;
@@ -213,6 +213,9 @@
 				}
 
 			}
+		}
+		.after{
+			height: 0px;
 		}
 	}
 }
