@@ -5,7 +5,7 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-				<a href='/' title='главная' className={s.logo}>
+				<a href='https://kasatkin.io/ru' target='_blank' title='Главная' className={s.logo}>
 					<Logo />
 				</a>
 			</nav>
