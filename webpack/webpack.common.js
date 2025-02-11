@@ -93,7 +93,8 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
-				{ from: 'public/video', to: 'video' },]
+				{ from: 'public/video', to: 'video' },
+				{ from: 'public/image', to: 'image' },]
 		}),
 		new PreloadWebpackPlugin({
 			// указываем, что тип ссылки будет preload
