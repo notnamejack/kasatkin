@@ -9,6 +9,7 @@ import { ReactComponent as Logo } from './assets/logo.svg';
 import { ReactComponent as LogoTab } from './assets/logo-tab.svg';
 import { ReactComponent as LogoMobile } from './assets/logo-mobile.svg';
 import axios from "axios";
+import clsx from 'clsx';
 
 interface IForm{
 	name: string,
@@ -27,6 +28,7 @@ export function Order () {
 
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);
+	const [isVisible, setIsVisible] = useState(false)
 	const isMobile = window.matchMedia("(max-width: 550px)").matches;
 
 	useEffect(() => {
@@ -41,6 +43,12 @@ export function Order () {
 			window.removeEventListener('scroll', changeScroll);
 		};
 	}, []);
+
+	useEffect(() => {
+		if(refProject.current){
+			setIsVisible(refProject.current.getBoundingClientRect()?.y <= 950)
+		}
+	},[refProject?.current?.getBoundingClientRect()?.y])
 
 	const changeScroll = () => {
 		setScroll(window.scrollY);
@@ -81,6 +89,10 @@ export function Order () {
 		},
 		[form]
 	);
+
+	const handlerClick = () => {
+		refProject.current?.scrollIntoView({behavior: "smooth"})
+	}
 
 	return(
 		<section className={s.order}>
@@ -149,6 +161,9 @@ export function Order () {
 				</div>
 			</div>
 			<div className={s.after}></div>
+			<div className={clsx(s.click, isVisible && s.active)}>
+				<button onClick={handlerClick}>Начать проект</button>
+			</div>
 		</section>
 	)
 }

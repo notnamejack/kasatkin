@@ -216,6 +216,38 @@
 		}
 
 	}
+	.click{
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		button{
+			height: 44px;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 14px;
+			background: #FFF;
+			color: #000;
+			font-family: Inter;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 100%; /* 16px */
+			transform: translateY(-30px);
+			transition: opacity .3s, transform .3s;
+			cursor: pointer;
+		}
+		&.active{
+			button{
+				position: 0;
+				transform: translateY(100px);
+			}
+		}
+	}
 }
 @media (max-width: 1024px) {
 	.order{
