@@ -8,6 +8,8 @@ import { ReactComponent as Watsapp } from './assets/watsapp.svg';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import { ReactComponent as LogoTab } from './assets/logo-tab.svg';
 import { ReactComponent as LogoMobile } from './assets/logo-mobile.svg';
+import { ReactComponent as TickIcon } from './assets/tick-icon.svg';
+import { ReactComponent as WarningIcon } from './assets/warning-icon.svg';
 import axios from "axios";
 import clsx from 'clsx';
 
@@ -28,7 +30,9 @@ export function Order () {
 
 	const [scroll, setScroll] = useState<number>(0);
 	const refProject = useRef<HTMLDivElement>(null);
-	const [isVisible, setIsVisible] = useState(false)
+	const [isVisible, setIsVisible] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(true);
+	const [isAlert, setIsAlert] = useState(false);
 	const isMobile = window.matchMedia("(max-width: 550px)").matches;
 
 	useEffect(() => {
@@ -49,6 +53,12 @@ export function Order () {
 			setIsVisible(refProject.current.getBoundingClientRect()?.y <= 950)
 		}
 	},[refProject?.current?.getBoundingClientRect()?.y])
+
+	useEffect(() => {
+		if(isAlert){
+			setTimeout(() => setIsAlert(false), 5000)
+		}
+	},[isAlert])
 
 	const changeScroll = () => {
 		setScroll(window.scrollY);
@@ -71,17 +81,23 @@ export function Order () {
 				  }).then(resp => {
 					  switch(resp.status){
 						case 200:{
-						  return resp.data
+							setIsSuccess(true);
+						  	return resp.data
 						}
 						default:{
-						  return null;
+							setIsSuccess(false);
+						  	return null;
 						}
 					  }
 					})
-					.catch(error => console.log(error.response))
+					.catch(error => {
+						console.log(error.response);
+						setIsSuccess(false);
+					})
 					.finally(() => {
 						setSend(false);
-						setForm({ ...form, name: '', phone: '' })
+						setIsAlert(true);
+						setForm({ ...form, name: '', phone: '' });
 					})
 			}
 			form.name === undefined && setForm({ ...form, name: '' });
@@ -161,6 +177,16 @@ export function Order () {
 				</div>
 			</div>
 			<div className={s.after}></div>
+			<div className={clsx(s.container_alert, isAlert && s.active_alert)}>
+				<div className={clsx(s.alert, !isSuccess && s.error)}>
+					{/* <div className={s.icon}>
+						{isSuccess ? <TickIcon/> : <WarningIcon/>}
+					</div> */}
+					<p>
+						{isSuccess ? "Ваш запрос успешно отправлен." : "Не удалось отправить, повторите попытку позже."}
+					</p>
+				</div>
+			</div>
 			<div className={clsx(s.click, isVisible && s.active)}>
 				<button onClick={handlerClick}>Начать проект</button>
 			</div>
