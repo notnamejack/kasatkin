@@ -58,7 +58,6 @@ export function CreateProduct () {
 	}, [start, relative]);
 
 	const height = useMemo(() => {
-		console.log(scrollY)
 		let count = 750
 		if(scrollY >= 350 && scrollY <= 1100){
 			count = 750 - (scrollY * 0.09);
