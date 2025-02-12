@@ -16,7 +16,7 @@
 		z-index: 1;
 	}
 	.after{
-		height: 2200px;
+		height: 1500px;
 	}
 	.order_container{
 		position: sticky;
@@ -227,7 +227,10 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		height: 0px;
 		z-index: 1000;
+		transform: translateY(-30px);
+		transition: opacity .3s, transform .3s;
 		button{
 			height: 44px;
 			padding: 12px 24px;
@@ -240,15 +243,12 @@
 			font-style: normal;
 			font-weight: 500;
 			line-height: 100%; /* 16px */
-			transform: translateY(-30px);
-			transition: opacity .3s, transform .3s;
 			cursor: pointer;
 		}
 		&.active{
-			button{
-				position: 0;
-				transform: translateY(100px);
-			}
+			z-index: -1;
+			position: 0;
+			transform: translateY(100px);
 		}
 	}
 	.container_alert{
@@ -256,10 +256,14 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+		height: 0px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		z-index: 1000;
+		z-index: -1;
+		opacity: 0;
+		transform: translateY(-100px);
+		transition: transform .3s, opacity .3s, border .3s;
 		.alert{
 			width: auto;
 			height: 50px;
@@ -270,9 +274,6 @@
 			align-items: center;
 			gap: 14.31px;
 			padding: 10px 17px;
-			opacity: 0;
-			transform: translateY(-100px);
-			transition: transform .3s, opacity .3s, border .3s;
 			.icon{
 				width: 25px;
 				height: 25px;
@@ -295,10 +296,9 @@
 			}
 		}
 		&.active_alert{
-			.alert{
-				opacity: 1;
-				transform: translateY(30px);
-			}
+			opacity: 1;
+			transform: translateY(30px);
+			z-index: 1000;
 		}
 	}
 }

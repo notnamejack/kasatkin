@@ -58,11 +58,16 @@ export function CreateProduct () {
 	}, [start, relative]);
 
 	const height = useMemo(() => {
+		console.log(scrollY)
 		let count = 750
-		if(scrollY >= 500)
-			count = 750 - (scrollY * 0.5);
+		if(scrollY >= 350 && scrollY <= 1100){
+			count = 750 - (scrollY * 0.09);
+		}
+		else if (scrollY >= 1100){
+			count = 650;
+		}
 		return count;
-	}, [start, relative]);
+	}, [scrollY]);
 
 	// Стили для первого блока: смещение вверх и исчезание
 	const blockOneStyle: React.CSSProperties = {

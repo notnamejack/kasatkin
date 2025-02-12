@@ -17,7 +17,7 @@ interface IForm{
 	name: string,
 	phone: string
 }
-const startScroll = 5600;
+const startScroll = 4900;
 const startMScroll = 3000;
 export function Order () {
 
