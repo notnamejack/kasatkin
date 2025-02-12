@@ -26,6 +26,9 @@
 		top: 0;
 		left: 0;
 		.form_background{
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -351,7 +354,12 @@
 
 @media (max-width: 500px) {
 	.order{
+		.sticky{
+			height: min-content;
+			overflow-x: hidden;
+		}
 		.order_container{
+			position: relative;
 			padding: 30px 16px;
 			width: calc(100% - 32px);
 			.order_form{
@@ -373,6 +381,8 @@
 		}
 		.footer{
 			padding-bottom: 85px;
+			padding-top: 0;
+			margin: 0;
 			h2{
 				margin-top: 50px;
 				padding: 10px 16px;
@@ -404,7 +414,7 @@
 			}
 		}
 		.after{
-			height: 5000px;
+			height: 0px;
 		}
 	}
 }
