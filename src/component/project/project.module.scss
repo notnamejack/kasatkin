@@ -149,7 +149,7 @@
 					width: 560px;
 					height: 360px;
 					&:hover::after{
-						border-color: #1D68FF;
+						border-color: #AE8641;
 					}
 				}
 			}
@@ -172,7 +172,7 @@
 					width: 560px;
 					height: 360px;
 					&:hover::after{
-						border-color: #20B8D2;
+						border-color: #CC6171;
 					}
 				}
 				.video {
@@ -180,6 +180,9 @@
 					margin-bottom: 140px;
 					width: 440px;
 					height: 440px;
+					&:hover::after{
+						border-color: #F11C49;
+					}
 				}
 			}
 		}
