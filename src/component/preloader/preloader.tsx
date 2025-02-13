@@ -4,10 +4,11 @@ import { ReactComponent as Number } from './assets/number.svg';
 
 export function Preloader(){
 	const [progress, setProgress] = useState(0);
+	const [progressStatus, setProgressStatus] = useState(0);
   	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
-		updateProgress();
+		// updateProgress();
 		// window.addEventListener("load", updateProgress);
 		document.addEventListener("readystatechange", updateProgress);
 		return () => {
@@ -25,23 +26,16 @@ export function Preloader(){
 	},[isLoaded])
 
 	const intervalId = setInterval(() => {
-		setProgress(prev => {
-		  if (prev < 90) {
+		setProgressStatus(prev => {
+		  if (prev < 100 && progress < 100) {
 			// Увеличиваем на случайное значение от 1 до 5
-			return prev + Math.floor(Math.random() * 5) + 1;
+			let number = prev + Math.floor(Math.random() * 5);
+			return number < 100 ? number : 100
 		  }
 		  return prev;
 		});
-	  }, 100);
+	  }, 200);
 
-	const handleLoad = () => {
-		clearInterval(intervalId);
-		setProgress(100);
-		// Через небольшую задержку скрываем прелоадер, чтобы показать 100%
-		setTimeout(() => {
-			setIsLoaded(true);
-		}, 500);
-	};
 
 	const updateProgress = () => {
 		if (document.readyState === "loading") {
@@ -51,17 +45,26 @@ export function Preloader(){
 		} else if (document.readyState === "complete") {
 			setProgress(90);
 			setTimeout(() => {setProgress(100);}, 100);
-			setTimeout(() => {setIsLoaded(true)}, 500); // Добавляем небольшую задержку
+			 // Добавляем небольшую задержку
 		// setIsLoaded(true)
 		}
 	};
+
+	useEffect(() => {
+		if(progress === 100 && progressStatus === 100)
+			setTimeout(() => {setIsLoaded(true)}, 500);
+	},[progress,  progressStatus])
+
+	useEffect(() => {
+
+	},)
 
   if (isLoaded) return null;
   return (
     <div className={s.loader_container}>
 		<div className={s.loader_bar}>
 			{/* {progress >= 30 ? <p>{progress}%</p> : <Number/>} */}
-			<p>{progress}%</p>
+			<p>{progressStatus}%</p>
 		</div>
     </div>
   );
