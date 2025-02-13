@@ -59,8 +59,6 @@ export function Preloader(){
 	};
 
 	useEffect(() => {
-		console.log(progress)
-		console.log(progressStatus)
 		if(progress == 100 && progressStatus == 100)
 			setTimeout(() => {setIsLoaded(true)}, 500);
 	},[progress,  progressStatus])
