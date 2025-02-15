@@ -105,7 +105,7 @@ export function CreateProduct () {
 			<div className={s.block_three} ref={thirdBlockRef} style={blockThreeStyle}>
 				<div className={s.goal}>
 					<h2>
-						ПОМОГАЕМ БИЗНЕСУ ДОСТИЧЬ <strong>ЦЕЛЕЙ</strong>
+						ПОМОГАЕМ БИЗНЕСУ ДОСТИЧЬ <strong title='ЦЕЛЕЙ'>ЦЕЛЕЙ</strong>
 					</h2>
 					<div className={s.goal_container}>
 						<div className={s.animi}>
