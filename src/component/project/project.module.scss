@@ -65,7 +65,7 @@
 					&::before{
 						position: absolute;
 						content: '';
-						border-radius: 25px;
+						border-radius: 29px;
 						border: 8px solid rgba(0, 0, 0, 0.15);
 						width: calc(100% - 25px);
 						height: calc(100% - 25px);
@@ -74,22 +74,12 @@
 						opacity: 0;
 						transition: opacity 0.2s;
 					}
-					&::after {
-						content: "";
-						position: absolute;
-						width: calc(100% - 25px);
-						height: calc(100% - 25px);
-						border-radius: 25px;
-						top: 5px;
-						left: 5px;
-						border: 8px solid transparent;
+					.animated{
 						opacity: 0;
 						transition: opacity 0.2s;
 					}
-					&:hover::after{
+					&:hover .animated{
 						opacity: 1;
-						animation: prixClipFix 8s infinite linear;
-						border-color: #000;
 					}
 					&:hover::before{
 						opacity: 1;
@@ -144,12 +134,18 @@
 					&:hover::after{
 						border-color: #EF6D0D;
 					}
+					&::before{
+						border: 8px solid rgba(239, 109, 13, 0.15);
+					}
 				}
 				.trend {
 					width: 560px;
 					height: 360px;
 					&:hover::after{
 						border-color: #AE8641;
+					}
+					&::before{
+						border: 8px solid rgba(174, 134, 65, 0.15);
 					}
 				}
 			}
@@ -160,6 +156,9 @@
 					height: 360px;
 					&:hover::after{
 						border-color: #1D68FF;
+					}
+					&::before{
+						border: 8px solid rgba(29, 104, 255, 0.15);
 					}
 				}
 				.m_carmax {
@@ -174,6 +173,9 @@
 					&:hover::after{
 						border-color: #CC6171;
 					}
+					&::before{
+						border: 8px solid rgba(204, 97, 113, 0.15);
+					}
 				}
 				.video {
 					margin-top: 450px;
@@ -182,6 +184,9 @@
 					height: 440px;
 					&:hover::after{
 						border-color: #F11C49;
+					}
+					&::before{
+						border: 8px solid rgba(241, 28, 73, 0.15);
 					}
 				}
 			}

@@ -1,0 +1,1 @@
+export {AnimatedBorderBox as default} from './animated-border-box'

@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from './assets/project-logo.svg';
 import s from './project.module.scss';
 import videoImg from './assets/video.jpg';
 import clsx from 'clsx';
+import AnimatedBorderBox from '../animated-border-box';
 
 const startScroll = 1700;
 export function Project() {
@@ -50,6 +51,7 @@ export function Project() {
 								target='_blank'
 								title='carmax'
 								className={clsx(s.container_image, s.carmax)}>
+								<div className={s.animated}><AnimatedBorderBox/></div>
 								<div className={clsx(s.image)} ref={carmaxTRef}>
 									<video
 										className={''}
@@ -77,6 +79,7 @@ export function Project() {
 								target='_blank'
 								title='KASATKIN PAY'
 								className={clsx(s.container_image, s.turn)}>
+								<div className={s.animated}><AnimatedBorderBox color='#821ebf' width={470} height={470}/></div>
 								<div className={clsx(s.image)} ref={turnRef}>
 									<video
 										className={''}
@@ -100,6 +103,7 @@ export function Project() {
 								</div>
 							</a>
 							<div className={clsx(s.container_image, s.bank)}>
+								<div className={s.animated}><AnimatedBorderBox color='#EF6D0D' width={436} height={515}/></div>
 								<div className={clsx(s.image)} ref={bankRef}>
 									<video
 										className={''}
@@ -127,6 +131,7 @@ export function Project() {
 								target='_blank'
 								title='alpha dex'
 								className={clsx(s.container_image, s.trend)}>
+								<div className={s.animated}><AnimatedBorderBox color='#AE8641'/></div>
 								<div className={clsx(s.image)} ref={trendRef}>
 									<video
 										className={''}
@@ -156,6 +161,7 @@ export function Project() {
 								target='_blank'
 								title='xpad pro'
 								className={clsx(s.container_image, s.end)}>
+								<div className={s.animated}><AnimatedBorderBox color='#1D68FF'/></div>
 								<div className={clsx(s.image)} ref={endRef}>
 									<video
 										className={''}
@@ -183,6 +189,7 @@ export function Project() {
 								target='_blank'
 								title='carmax'
 								className={clsx(s.container_image, s.m_carmax)}>
+								<div className={s.animated}><AnimatedBorderBox color='#929292' width={470} height={470}/></div>
 								<div className={clsx(s.image)} ref={carmaxRef}>
 									<video
 										className={''}
@@ -210,6 +217,7 @@ export function Project() {
 								target='_blank'
 								title='USHI'
 								className={clsx(s.container_image, s.gen)}>
+								<div className={s.animated}><AnimatedBorderBox color='#CC6171'/></div>
 								<div className={clsx(s.image)} ref={gemRef}>
 									<video
 										className={''}
@@ -237,6 +245,7 @@ export function Project() {
 								target='_blank'
 								title='ark production'
 								className={clsx(s.container_image, s.video)}>
+								<div className={s.animated}><AnimatedBorderBox color='#F11C49' width={470} height={470}/></div>
 								<div className={clsx(s.image)} ref={proRef}>
 									<video
 										className={''}
