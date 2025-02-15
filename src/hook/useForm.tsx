@@ -15,5 +15,12 @@ export function useForm<TForm>(inputValues: TForm) {
 		});
 	};
 
-	return { form, handleInputChange, handleInputEdit, setForm };
+	const handleNameEdit = (name: string, value: string) => {
+		setForm({
+			...form,
+			[name]: value,
+		});
+	};
+
+	return { form, handleInputChange, handleInputEdit, handleNameEdit, setForm };
 }

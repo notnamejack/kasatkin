@@ -1,4 +1,3 @@
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import s from './order.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useForm } from '../../hook/useForm';
@@ -8,10 +7,9 @@ import { ReactComponent as Watsapp } from './assets/watsapp.svg';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import { ReactComponent as LogoTab } from './assets/logo-tab.svg';
 import { ReactComponent as LogoMobile } from './assets/logo-mobile.svg';
-import { ReactComponent as TickIcon } from './assets/tick-icon.svg';
-import { ReactComponent as WarningIcon } from './assets/warning-icon.svg';
 import axios from "axios";
 import clsx from 'clsx';
+import PhoneInput from '../phone-input';
 
 interface IForm{
 	name: string,
@@ -21,7 +19,7 @@ const startScroll = 4900;
 const startMScroll = 3000;
 export function Order () {
 
-	const { form, handleInputChange, setForm } = useForm<IForm>({
+	const { form, handleInputChange, handleNameEdit, setForm } = useForm<IForm>({
 		name: '',
 		phone: '',
 	});
@@ -135,14 +133,7 @@ export function Order () {
 									<label htmlFor="name" title='Имя'/>
 								</div>
 								<div className={s.input_item}>
-									<input
-										name='phone'
-										type="phone"
-										id='phone'
-										placeholder='Номер телефона'
-										value={form.phone}
-										onChange={handleInputChange}/>
-									<label htmlFor="phone" title='Номер телефона'/>
+									<PhoneInput value={form.phone} onChange={(value: string) => handleNameEdit('phone', value)}/>
 								</div>
 							</div>
 							<div className={s.input_footer_btn}>
