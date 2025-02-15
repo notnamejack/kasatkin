@@ -151,7 +151,7 @@
 			}
 			.left {
 				.end {
-					margin-top: 407px;
+					margin-top: 40vh;
 					width: 560px;
 					height: 360px;
 					&:hover::after{
@@ -162,12 +162,13 @@
 					}
 				}
 				.m_carmax {
-					margin-top: 238px;
+					// margin-top: 238px;
+					margin-top: 40vh;
 					width: 440px;
 					height: 440px;
 				}
 				.gen {
-					margin-top: 370px;
+					margin-top: 37vh;
 					width: 560px;
 					height: 360px;
 					&:hover::after{
@@ -178,8 +179,8 @@
 					}
 				}
 				.video {
-					margin-top: 450px;
-					margin-bottom: 140px;
+					margin-top: 45vh;
+					margin-bottom: 14vh;
 					width: 440px;
 					height: 440px;
 					&:hover::after{

@@ -50,7 +50,13 @@ export function Project() {
 								href='https://carmax.kasatkin.io/'
 								target='_blank'
 								title='carmax'
-								className={clsx(s.container_image, s.carmax)}>
+								className={clsx(s.container_image, s.carmax)}
+								style={{
+									transform: `translateY(${
+										(carmaxTRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.2
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox/></div>
 								<div className={clsx(s.image)} ref={carmaxTRef}>
 									<video
@@ -78,7 +84,13 @@ export function Project() {
 								href='https://pay.kasatkin.io'
 								target='_blank'
 								title='KASATKIN PAY'
-								className={clsx(s.container_image, s.turn)}>
+								className={clsx(s.container_image, s.turn)}
+								style={{
+									transform: `translateY(-${
+										(turnRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.1
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox color='#821ebf' width={470} height={470}/></div>
 								<div className={clsx(s.image)} ref={turnRef}>
 									<video
@@ -102,7 +114,13 @@ export function Project() {
 									<h3>KASATKIN PAY</h3>
 								</div>
 							</a>
-							<div className={clsx(s.container_image, s.bank)}>
+							<div className={clsx(s.container_image, s.bank)}
+								style={{
+									transform: `translateY(${
+										(bankRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.5
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox color='#EF6D0D' width={436} height={515}/></div>
 								<div className={clsx(s.image)} ref={bankRef}>
 									<video
@@ -130,7 +148,13 @@ export function Project() {
 								href='https://alpha-dex.io/'
 								target='_blank'
 								title='alpha dex'
-								className={clsx(s.container_image, s.trend)}>
+								className={clsx(s.container_image, s.trend)}
+								style={{
+									transform: `translateY(-${
+										(trendRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.1
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox color='#AE8641'/></div>
 								<div className={clsx(s.image)} ref={trendRef}>
 									<video
@@ -160,7 +184,13 @@ export function Project() {
 								href='https://xpad.pro/'
 								target='_blank'
 								title='xpad pro'
-								className={clsx(s.container_image, s.end)}>
+								className={clsx(s.container_image, s.end)}
+								style={{
+									transform: `translateY(${
+										(endRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.5
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox color='#1D68FF'/></div>
 								<div className={clsx(s.image)} ref={endRef}>
 									<video
@@ -188,7 +218,13 @@ export function Project() {
 								href='https://carmax.kasatkin.io/'
 								target='_blank'
 								title='carmax'
-								className={clsx(s.container_image, s.m_carmax)}>
+								className={clsx(s.container_image, s.m_carmax)}
+								style={{
+									transform: `translateY(${
+										(carmaxRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.05
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox color='#929292' width={470} height={470}/></div>
 								<div className={clsx(s.image)} ref={carmaxRef}>
 									<video
@@ -244,7 +280,13 @@ export function Project() {
 								href='https://arkproduction.kasatkin.io/'
 								target='_blank'
 								title='ark production'
-								className={clsx(s.container_image, s.video)}>
+								className={clsx(s.container_image, s.video)}
+								style={{
+									transform: `translateY(-${
+										(proRef?.current?.getBoundingClientRect()?.y || 100) *
+										0.1
+									}px)`,
+								}}>
 								<div className={s.animated}><AnimatedBorderBox color='#F11C49' width={470} height={470}/></div>
 								<div className={clsx(s.image)} ref={proRef}>
 									<video
