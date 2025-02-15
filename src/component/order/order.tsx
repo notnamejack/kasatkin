@@ -148,7 +148,7 @@ export function Order () {
 							<div className={s.input_footer_btn}>
 								<button disabled={send}>Отправить</button>
 								<p>или</p>
-								<a href='https://t.me/kasatkinfoundation' target='_blank'>
+								<a href='https://t.me/kasatkinfoundation' target='_blank' title='Телеграмм'>
 									<Telega />
 									Связаться через телеграм
 								</a>
@@ -160,8 +160,8 @@ export function Order () {
 					<h2>Начните реализацию своего проекта прямо сейчас</h2>
 					<div className={s.footer_link}>
 						<div className={s.message}>
-							<a href='https://t.me/kasatkinfoundation' target='_blank'><TelegaBlack /></a>
-							<a href='https://api.whatsapp.com/send/?phone=79932494825&text&type=phone_number&app_absent=0' target='_blank'><Watsapp /></a>
+							<a href='https://t.me/kasatkinfoundation' target='_blank' title='Телеграмм'><TelegaBlack /></a>
+							<a href='https://api.whatsapp.com/send/?phone=79932494825&text&type=phone_number&app_absent=0' target='_blank' title='WatsApp'><Watsapp /></a>
 						</div>
 						<div className={s.logo}>
 							<Logo className={s.desctop}/>

@@ -78,6 +78,12 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'], //указываем файлы с которыми будет работать webpack
 	},
+	optimization: {
+		splitChunks: {
+		  chunks: 'all', // Разделяет код на части
+		},
+		minimize: true, // Минимизирует все ресурсы
+	},
 	plugins: [
 		new HTMLWebpackPlugins({
 			template: path.resolve(__dirname, '..', './public/index.html'),
