@@ -69,7 +69,7 @@ export function Order () {
 				setSend(true);
 				let formData = new FormData();
 				formData.append('name', form.name);
-				formData.append('phone', form.phone);
+				formData.append('phone', formatPhoneNumber(form.phone));
 				formData.append('project_type', 'landing');
 
 				axios({
@@ -103,6 +103,15 @@ export function Order () {
 		},
 		[form]
 	);
+
+	function formatPhoneNumber(input: string) {
+
+		let county = input.split('');
+
+		input = input.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, +county[1] == 7 ? '+7 ($2) $3-$4-$5' : '+375 ($2) $3-$4-$5');
+
+		return input;
+	  }
 
 	const handlerClick = () => {
 		refProject.current?.scrollIntoView({behavior: "smooth"})
